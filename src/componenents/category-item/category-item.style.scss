@@ -42,8 +42,8 @@
     }
 
     .category-body-container {
-        height: 90px;
-        padding: 1rem 25px;
+        height: 80px;
+        padding: 4rem 15px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -55,7 +55,7 @@
 
         h2 {
             font-weight: bold;
-            margin: 0 6px 0;
+            margin: 0 3px 0;
             font-size: 2.5rem;
             color: #4a4a4a;
         }
@@ -63,6 +63,7 @@
         p {
             font-weight: lighter;
             font-size: 1.5rem;
+            margin: 0;
         }
     }
 }
