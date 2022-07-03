@@ -1,0 +1,19 @@
+.sign-up-container {
+  display: flex;
+  flex-direction: column;
+  width: 380px;
+
+  h2 {
+    font-size: 2rem;
+    margin: 10px 0;
+  }
+
+  span {
+    font-size: 1.6rem;
+  }
+
+  .buttons-container {
+    display: flex;
+    justify-content: space-between;
+  }
+}
