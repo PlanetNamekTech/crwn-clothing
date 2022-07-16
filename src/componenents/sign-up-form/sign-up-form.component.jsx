@@ -1,12 +1,10 @@
 
-import { useState, useContext } from "react";
+import { useState } from "react";
 
 import FormInput from '../form-input/form-input.component';
 import Button from '../button/button.component';
 
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from "../../utils/firebase/firebase.utils";
-
-import { UserContext } from "../../contexts/user.context";
 
 import './sign-up-form.styles.scss';
 // only group state like this if the values are going to be grouped together
@@ -20,8 +18,6 @@ const defaultFormFields = {
 const SignUpForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { displayName, email, password, confirmPassword } = formFields;
-
-  const { setCurrentUser } = useContext(UserContext);
 
   const resetFormFields = () => {
     setFormFields(defaultFormFields)
@@ -38,7 +34,6 @@ const SignUpForm = () => {
     try {
       const { user }  = await createAuthUserWithEmailAndPassword(email, password);
       //When user signs up for the first time, the user will be set inside the UserContext
-      setCurrentUser(user);
       await createUserDocumentFromAuth(user, { displayName })
       resetFormFields();
 
